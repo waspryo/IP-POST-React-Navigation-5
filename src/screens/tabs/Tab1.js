@@ -1,11 +1,36 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from '../../styles/style';
 
-Tab1 = () =>
+import * as data from '../../../data.json';
+import { ScrollView } from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-  <View style={styles.center}>
-    <Text style={styles.title}>Tab 1</Text>
-  </View>
+// console.log(data.projects)
+let influencer = data.projects.map((val, key) => {
+  // console.log(location.state.projects)
+  return <TouchableOpacity onPress={() => alert(val['id'])} key={key} style={styles.item}>
+    <Text style={styles.text}>
+      Id {val['id']}
+    </Text>
+    <Text>
+      {val['title']}
+    </Text>
+  </TouchableOpacity>
+})
+class Tab1 extends Component {
+  render() {
+    return (
+      <SafeAreaView>
+        <ScrollView>
+          <View style={styles.center}>
+            <View>{influencer}</View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+}
+
 
 export default Tab1;

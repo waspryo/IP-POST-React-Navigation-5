@@ -28,8 +28,26 @@ export default class App extends Component {
     createHomeStack = () =>
       <Stack.Navigator>
         <Stack.Screen name="Feed" component={Feed} />
-        <Stack.Screen name="Detaol" component={Detail} />
+        <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
+        <Stack.Screen name="Top Tabs" children={createTopTabs} />
       </Stack.Navigator>
+
+    createTopTabs = () => {
+      return <MaterialTopTabs.Navigator>
+        <MaterialTopTabs.Screen name="Tab 1" component={Tab1}/>
+        <MaterialTopTabs.Screen name="Tab 2" component={Tab2}/>
+        <MaterialTopTabs.Screen name="Tab 3" component={Tab3}/>
+      </MaterialTopTabs.Navigator>
+    }
+
+    createBottomTabs = () => {
+      return <MaterialBottomTabs.Navigator>
+        <MaterialBottomTabs.Screen name="Tab 1" component={Tab1}/>
+        <MaterialBottomTabs.Screen name="Tab 2" component={Tab2}/>
+        <MaterialBottomTabs.Screen name="Tab 3" component={Tab3}/>
+      </MaterialBottomTabs.Navigator>
+    }
 
     return (
       <NavigationContainer>

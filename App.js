@@ -27,7 +27,7 @@ export default class App extends Component {
 
     createHomeStack = () =>
       <Stack.Navigator>
-        <Stack.Screen name="Feed" component={Feed} />
+        <Stack.Screen name="EMEPOS" component={Feed} />
         <Stack.Screen name="Detail" component={Detail} />
         <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
         <Stack.Screen name="Top Tabs" children={createTopTabs} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-import { styles } from './styles/styles';
+import { styles } from './styles/style';
 
 class Detail extends Component {
   render() {

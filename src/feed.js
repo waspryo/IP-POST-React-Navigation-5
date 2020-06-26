@@ -14,6 +14,7 @@ class Feed extends Component {
             <Button
               title='EMEPOS'
               style={{color: 'white'}}
+              // App.jsのname="Detail"を見て移動できる
               onPress={() => this.props.navigation.navigate('Detail', { screenName: "My Detail Screen"})}
               />
           </View>

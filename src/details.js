@@ -10,6 +10,7 @@ class Detail extends Component {
         <Text style={styles.title}>Detail Screen</Text>
           <Button
             title='View Buttom Tabs'
+            // App.jsのname="Bottom Tabs"を見て移動できる
             onPress={() => this.props.navigation.navigate('Bottom Tabs')}
           />
           <Button

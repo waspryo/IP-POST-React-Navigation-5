@@ -29,6 +29,7 @@ export default class Tab2 extends React.Component {
     if (this.state.isLoading) {
       return (
         <View style={styles.container}>
+          {/* ローディング用のコンポーネント */}
           <ActivityIndicator />
         </View>
       )
@@ -40,7 +41,9 @@ export default class Tab2 extends React.Component {
       })
 
       return (
+        // SafeAreaViewはスマホのトップに文字とか要素が被らないよう幅を取ってくれる
         <SafeAreaView>
+          {/* ScrollViewは表示するものが多くはみ出る場合にスクロールできる */}
           <ScrollView>
             <View style={styles.center}>
               <View>{movies}</View>

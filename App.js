@@ -9,7 +9,7 @@ import Screen3 from './src/screens/drawer/screen3';
 import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
 import Tab3 from './src/screens/tabs/Tab3';
-// Icon
+// Vector Icon
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // Navigations
 import { NavigationContainer } from '@react-navigation/native';
@@ -113,7 +113,7 @@ export default class App extends Component {
       <NavigationContainer>
         <Drawer.Navigator>
           <Drawer.Screen name="Home" children={createHomeStack} />
-          < Drawer.Screen name="Contacts" component={Screen1} />
+          <Drawer.Screen name="Contacts" component={Screen1} />
           <Drawer.Screen name="Favorites" component={Screen2} />
           <Drawer.Screen name="Settings" component={Screen3} />
         </Drawer.Navigator>

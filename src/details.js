@@ -1,24 +1,84 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Platform } from 'react-native';
+import {
+  useNavigation,
+  useRoute,
+  useFocusEffect
+} from '@react-navigation/native';
 
 import { styles } from './styles/style';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-class Detail extends Component {
-  render() {
-    return (
-      <View style={styles.center}>
-        <Text style={styles.title}>Detail Screen</Text>
-          <Button
-            title='View Buttom Tabs'
-            // App.jsのname="Bottom Tabs"を見て移動できる
-            onPress={() => this.props.navigation.navigate('Bottom Tabs')}
-          />
-          <Button
-            title='View Top Tabs'
-            onPress={() => this.props.navigation.navigate('Top Tabs')}
-          />
-      </View>
-    );
-  }
+Detail = () => {
+
+  const navigation = useNavigation()
+  const route = useRoute()
+
+  useFocusEffect(
+    React.useCallback(() => {
+      fetch('https://restcountries.eu/rest/v2/capital/tallinn')
+      .then(res => {
+        res.json()
+        .then((data) => {
+          console.log(data)
+        })
+      })
+      return () => console.log("lost focus")
+    })
+  )
+
+  return (
+    <View style={styles.center}>
+      <Text style={styles.title}>{route.params.screenName}</Text>
+      {
+        Platform.select({
+          ios:
+            <Button
+              title='View Buttom Tabs'
+              // App.jsのname="Bottom Tabs"を見て移動できる
+              onPress={() => navigation.navigate('Bottom Tabs', { name: "param 1" })}
+            />,
+          android:
+            <TouchableOpacity
+              style={{ marginBottom: 16 }}
+              onPress={() => navigation.navigate('Bottom Tabs', { name: "param 1" })}
+            >
+              <Text style={{ color: 'blue', fontSize: 20 }}>View Botton Tabs</Text>
+            </TouchableOpacity>
+        })
+      }
+      {
+        Platform.select({
+          ios:
+            <Button
+              title='View Top Tabs'
+              onPress={() => navigation.navigate('Top Tabs', { name: "TAB 2" })}
+            />,
+          android:
+            <TouchableOpacity
+              style={{ marginBottom: 16 }}
+              onPress={() => navigation.navigate('Top Tabs', { name: "TAB 2" })}
+            >
+              <Text style={{ color: 'blue', fontSize: 20 }}>View Top Tabs</Text>
+            </TouchableOpacity>
+        })
+      }
+      {
+        Platform.select({
+          ios:
+            <Button
+              title='Pass Data Back'
+              onPress={() => navigation.navigate('EMEPOS', { data: "Hello" })}
+            />,
+          android:
+            <TouchableOpacity
+              onPress={() => navigation.navigate('EMEPOS', { name: "Hello" })}
+            >
+              <Text style={styles.androidButtonText}>Pass Data Back</Text>
+            </TouchableOpacity>
+        })
+      }
+    </View>
+  );
 }
 export default Detail;

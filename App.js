@@ -57,7 +57,7 @@ export default class App extends Component {
         />
       </Stack.Navigator>
 
-    createTopTabs = () => {
+    createTopTabs = (props) => {
       return <MaterialTopTabs.Navigator>
         <MaterialTopTabs.Screen
           name="Tab 1"
@@ -66,6 +66,7 @@ export default class App extends Component {
         <MaterialTopTabs.Screen
           name="Tab 2"
           component={Tab2}
+          options={{title: props.route.params.name}}
         />
         <MaterialTopTabs.Screen
           name="Tab 3"

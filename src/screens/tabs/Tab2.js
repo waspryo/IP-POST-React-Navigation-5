@@ -1,8 +1,12 @@
 import React from 'react';
 import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { styles } from '../../styles/style';
+import { useIsFocused } from '@react-navigation/native';
+
 
 export default class Tab2 extends React.Component {
+
+
   constructor(props) {
     super(props);
     this.state = {

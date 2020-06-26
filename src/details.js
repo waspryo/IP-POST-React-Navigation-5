@@ -3,7 +3,8 @@ import { View, Text, Button, Platform } from 'react-native';
 import {
   useNavigation,
   useRoute,
-  useFocusEffect
+  useFocusEffect,
+  useNavigationState
 } from '@react-navigation/native';
 
 import { styles } from './styles/style';
@@ -13,6 +14,9 @@ Detail = () => {
 
   const navigation = useNavigation()
   const route = useRoute()
+  const index = useNavigationState(state => state.index)
+
+  console.log(`Screen index: ${index}`)
 
   useFocusEffect(
     React.useCallback(() => {
@@ -20,7 +24,7 @@ Detail = () => {
       .then(res => {
         res.json()
         .then((data) => {
-          console.log(data)
+          // console.log(data)
         })
       })
       return () => console.log("lost focus")

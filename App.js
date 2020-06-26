@@ -9,7 +9,9 @@ import Screen3 from './src/screens/drawer/screen3';
 import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
 import Tab3 from './src/screens/tabs/Tab3';
-
+// Icon
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// Navigations
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -27,25 +29,83 @@ export default class App extends Component {
 
     createHomeStack = () =>
       <Stack.Navigator>
-        <Stack.Screen name="EMEPOS" component={Feed} />
-        <Stack.Screen name="Detail" component={Detail} />
-        <Stack.Screen name="Bottom Tabs" children={createBottomTabs} />
-        <Stack.Screen name="Top Tabs" children={createTopTabs} />
+        <Stack.Screen
+          name="EMEPOS"
+          component={Feed}
+          options={{ title: 'EMEPOS',
+          headerStyle: { backgroundColor: "#3DC0B1" },
+          headerTintColor: "white"}}/>
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
+          options={{
+          headerStyle: { backgroundColor: "#3DC0B1" },
+          headerTintColor: "white"}}/>
+        <Stack.Screen
+          name="Bottom Tabs"
+          children={createBottomTabs}
+          options={{
+          headerStyle: { backgroundColor: "#3DC0B1" },
+          headerTintColor: "white"}}
+          />
+        <Stack.Screen
+          name="Top Tabs"
+          children={createTopTabs}
+          options={{
+          headerStyle: { backgroundColor: "#3DC0B1" },
+          headerTintColor: "white"}}
+        />
       </Stack.Navigator>
 
     createTopTabs = () => {
       return <MaterialTopTabs.Navigator>
-        <MaterialTopTabs.Screen name="Tab 1" component={Tab1}/>
-        <MaterialTopTabs.Screen name="Tab 2" component={Tab2}/>
-        <MaterialTopTabs.Screen name="Tab 3" component={Tab3}/>
+        <MaterialTopTabs.Screen
+          name="Tab 1"
+          component={Tab1}
+        />
+        <MaterialTopTabs.Screen
+          name="Tab 2"
+          component={Tab2}
+        />
+        <MaterialTopTabs.Screen
+          name="Tab 3"
+          component={Tab3}
+        />
       </MaterialTopTabs.Navigator>
     }
 
     createBottomTabs = () => {
       return <MaterialBottomTabs.Navigator>
-        <MaterialBottomTabs.Screen name="Tab 1" component={Tab1}/>
-        <MaterialBottomTabs.Screen name="Tab 2" component={Tab2}/>
-        <MaterialBottomTabs.Screen name="Tab 3" component={Tab3}/>
+        <MaterialBottomTabs.Screen
+          name="Tab 1"
+          component={Tab1}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: () => (
+              <Icon style={[{ color: 'white' }]} size={25} name={'home'} />
+            ),
+          }}
+        />
+        <MaterialBottomTabs.Screen
+          name="Tab 2"
+          component={Tab2}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: () => (
+              <Icon style={[{ color: 'white' }]} size={25} name={'human'} />
+            )
+          }}
+        />
+        <MaterialBottomTabs.Screen
+          name="Tab 3"
+          component={Tab3}
+          options={{
+            tabBarLabel: 'Map',
+            tabBarIcon: () => (
+              <Icon style={[{ color: 'white' }]} size={25} name={'map'} />
+            ),
+          }}
+        />
       </MaterialBottomTabs.Navigator>
     }
 

@@ -6,9 +6,7 @@ import * as data from '../../../data.json';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-// console.log(data.projects)
 let influencer = data.projects.map((val, key) => {
-  // console.log(location.state.projects)
   return <TouchableOpacity onPress={() => alert(val['id'])} key={key} style={styles.item}>
     <Text style={styles.text}>
       Id {val['id']}

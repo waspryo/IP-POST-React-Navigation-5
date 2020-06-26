@@ -44,7 +44,6 @@ export default class Tab2 extends React.Component {
           <ScrollView>
             <View style={styles.center}>
               <View>{movies}</View>
-              {/* <Text style={styles.title}>Tab 1</Text> */}
             </View>
           </ScrollView>
         </SafeAreaView>

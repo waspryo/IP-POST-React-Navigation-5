@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, StyleSheet, Dimensions, ImageBackground } from 'react-native';
+import { View, Button, ImageBackground } from 'react-native';
 
 import { styles } from './styles/style';
 
-// const { width, height } = Dimensions.get('window');
 class Feed extends Component {
 
   render() {
@@ -13,8 +12,9 @@ class Feed extends Component {
         <View>
           <View style={styles.button}>
             <Button
-              title='Go to Feed Item'
-              onPress={() => this.props.navigation.navigate('Detail')}
+              title='EMEPOS'
+              style={{color: 'white'}}
+              onPress={() => this.props.navigation.navigate('Detail', { screenName: "My Detail Screen"})}
               />
           </View>
         </View>

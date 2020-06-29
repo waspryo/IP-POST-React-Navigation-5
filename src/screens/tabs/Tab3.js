@@ -18,10 +18,10 @@ export default class Tab3 extends React.Component {
       .then((responseJson) => {
         this.setState({
           isLoading: false,
-          dataSource: responseJson,
+          dataSource: responseJson
         })
         console.log('aaaaaaaaaaaaaa')
-        console.log(this.state.dataSource.name)
+        console.log(this.state.dataSource)
       })
       .catch((error) => {
         console.log(error)
@@ -37,6 +37,11 @@ export default class Tab3 extends React.Component {
         </View>
       )
     } else {
+      // let profile = Object.keys(this.state.dataSource).map((val, key) => {
+      //   return <TouchableOpacity key={key} style={styles.item}>
+      //     <Text>{val}</Text>
+      //   </TouchableOpacity>
+      // })
       let profile = Object.keys(this.state.dataSource).map((val, key) => {
         return <TouchableOpacity key={key} style={styles.item}>
           <Text>{val}</Text>
@@ -49,8 +54,8 @@ export default class Tab3 extends React.Component {
           {/* ScrollViewは表示するものが多くはみ出る場合にスクロールできる */}
           <ScrollView>
             <View style={styles.center}>
+              {/* <View>{profile}</View> */}
               <View>{profile}</View>
-              <View>{profile.name}</View>
             </View>
           </ScrollView>
         </SafeAreaView>

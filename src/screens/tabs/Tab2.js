@@ -23,6 +23,7 @@ export default class Tab2 extends React.Component {
           isLoading: false,
           dataSource: responseJson.episode,
         })
+        // console.log(this.state.dataSource)
       })
       .catch((error) => {
         console.log(error)

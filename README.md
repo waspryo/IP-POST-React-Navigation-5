@@ -2,11 +2,12 @@ React NativeにおけるAPI通信のやり方
 
 
 
-fetch(標準のもの)
+# fetch(標準のもの)
 
-fetchでレスポンスオブジェクトに対して json（）関数 で呼ぶ。
+* fetchでレスポンスオブジェクトに対して json（）関数 で呼ぶ。
 
-    componentDidMount() {
+```bash
+componentDidMount() {
       return fetch('http://localhost:5555/api/talent/profile')
         .then((res) => res.json())
         .then((responseJson) => {
@@ -19,12 +20,14 @@ fetchでレスポンスオブジェクトに対して json（）関数 で呼ぶ
           console.log(error)
         });
     }
+```
 
-axios
+# axios
 
-Axiosはdataプロパティ を呼び出す
+* Axiosはdataプロパティ を呼び出す
 
-    componentDidMount() {
+```bash
+componentDidMount() {
         axios.get('http://localhost:5555/api/talent/projects')
           .then((responseJson) => {
             this.setState({
@@ -37,6 +40,7 @@ Axiosはdataプロパティ を呼び出す
             console.log(err)
           })
         }
+```
         
         
         

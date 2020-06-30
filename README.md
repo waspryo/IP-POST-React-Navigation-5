@@ -13,8 +13,9 @@ componentDidMount() {
         .then((responseJson) => {
           this.setState({
             isLoading: false,
-            dataSource: responseJson.main_post_type[0]
+            dataSource: responseJson
           })
+          console.log(this.state.dataSource)
         })
         .catch((error) => {
           console.log(error)
@@ -32,7 +33,7 @@ componentDidMount() {
           .then((responseJson) => {
             this.setState({
               isLoadding: false,
-              projects: responseJson.data.projects
+              projects: responseJson.data
             })
             console.log(this.state.projects)
           })
@@ -41,63 +42,10 @@ componentDidMount() {
           })
         }
 ```
+
+# MEMO
+* Fetchの本体は stringified である必要があって、Axiosのデータには object が含まれている
+* axiosはほぼ全てのブラウザに対応している。
+<img width="567" alt="スクリーンショット 2020-06-30 23 59 39" src="https://user-images.githubusercontent.com/44771173/86143243-26617680-bb2f-11ea-9339-dc716813bbee.png">
+
         
-        
-        
-分かりやすくてカッコイイ名前をつける（今回は"hoge"という名前をつける）
- 
-"hoge"が何かを簡潔に紹介する
- 
-# DEMO
- 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
- 
-# Features
- 
-"hoge"のセールスポイントや差別化などを説明する
- 
-# Requirement
- 
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
-* hogehuga 1.0.2
- 
-# Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
-```
- 
-# Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
- 
-# Note
- 
-注意点などがあれば書く
- 
-# Author
- 
-作成情報を列挙する
- 
-* 作成者
-* 所属
-* E-mail
- 
-# License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
- 
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.

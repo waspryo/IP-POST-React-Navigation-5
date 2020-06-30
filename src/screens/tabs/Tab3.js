@@ -18,10 +18,8 @@ export default class Tab3 extends React.Component {
       .then((responseJson) => {
         this.setState({
           isLoading: false,
-          dataSource: responseJson
+          dataSource: responseJson.main_post_type[0]
         })
-        console.log('aaaaaaaaaaaaaa')
-        console.log(this.state.dataSource)
       })
       .catch((error) => {
         console.log(error)
@@ -44,7 +42,7 @@ export default class Tab3 extends React.Component {
       // })
       let profile = Object.keys(this.state.dataSource).map((val, key) => {
         return <TouchableOpacity key={key} style={styles.item}>
-          <Text>{val}</Text>
+          <Text>{this.state.dataSource[val]}</Text>
         </TouchableOpacity>
       })
 

@@ -7,14 +7,25 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   item: {
-    flex: 1,
-    alignSelf: 'stretch',
-    marginTop: 30,
-    marginHorizontal: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flex: 1,
+    // alignSelf: 'stretch',
+    // marginTop: 30,
+    // marginHorizontal: 20,
+    // alignItems: 'center',
+    // justifyContent: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: '#000'
+    backgroundColor: 'white',
+    margin: 20,
+    borderRadius: 20
+  },
+  projectImage: {
+    flex: 1,
+  },
+  projectText: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15
   },
   title: {
     fontSize: 36,

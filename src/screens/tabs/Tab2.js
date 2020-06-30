@@ -1,49 +1,44 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, Dimensions, ActivityIndicator, Image } from 'react-native';
 import { styles } from '../../styles/style';
-import { useIsFocused } from '@react-navigation/native';
+import axios from 'axios';
+
+
+const win = Dimensions.get('window');
 
 
 export default class Tab2 extends React.Component {
-
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      dataSource: null
+      dataSource: []
     }
   }
 
   componentDidMount() {
-    return fetch('https://rickandmortyapi.com/api/character/1')
-      .then((res) => res.json())
+      axios.get('http://localhost:5555/api/talent/projects/1659')
       .then((responseJson) => {
         this.setState({
           isLoading: false,
-          dataSource: responseJson.episode,
+          dataSource: responseJson.data
         })
         // console.log(this.state.dataSource)
       })
-      .catch((error) => {
-        console.log(error)
-      });
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   render() {
     if (this.state.isLoading) {
       return (
         <View style={styles.container}>
-          {/* ローディング用のコンポーネント */}
           <ActivityIndicator />
         </View>
       )
     } else {
-      let movies = this.state.dataSource.map((val, key) => {
-        return <TouchableOpacity  key={key} style={styles.item}>
-          <Text>{val}</Text>
-        </TouchableOpacity>
-      })
 
       return (
         // SafeAreaViewはスマホのトップに文字とか要素が被らないよう幅を取ってくれる
@@ -51,7 +46,22 @@ export default class Tab2 extends React.Component {
           {/* ScrollViewは表示するものが多くはみ出る場合にスクロールできる */}
           <ScrollView>
             <View style={styles.center}>
-              <View>{movies}</View>
+              <View style={styles.projectImage}>
+                <Image
+                  style={{
+                    flex: 1,
+                    alignSelf: 'stretch',
+                    width: win.width,
+                    height: 350
+                  }}
+                  source={require('../../../assets/デジモン1.jpg')}/>
+              </View>
+              <View style={styles.projectText}>
+                <Text>{this.state.dataSource.project['body']}</Text>
+              </View>
+              <View style={styles.projectText}>
+                <Text>{this.state.dataSource.project['instagram_micro_press_release']}</Text>
+              </View>
             </View>
           </ScrollView>
         </SafeAreaView>

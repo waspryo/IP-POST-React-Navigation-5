@@ -25,7 +25,7 @@ class Tab1 extends React.Component {
           isLoadding: false,
           projects: responseJson.data.projects
         })
-        console.log(this.state.projects)
+        // console.log(this.state.projects)
       })
       .catch((err) => {
         console.log(err)
@@ -43,27 +43,25 @@ class Tab1 extends React.Component {
     } else {
       let project = this.state.projects.map((val, key) => {
         return <TouchableOpacity key={key} style={styles.item}>
-          <Image
-            style={{
-              width: win.width,
-              height: 350
-            }}
-            source={require('../../../assets/デジモン2.png')}
-          />
-          <Text>{val.title}</Text>
-          <Text>{val.body}</Text>
-          <Text>{val.original_thumbnail_url}</Text>
+            <Image
+              style={{
+                width: win.width,
+                height: 450
+              }}
+              source={require('../../../assets/デジモン2.png')}
+            />
+          <View style={styles.title}>
+            <Text>{val.body}</Text>
+          </View>
         </TouchableOpacity>
       })
 
       return (
-        <SafeAreaView>
           <ScrollView>
             <View style={styles.center}>
               <View>{project}</View>
             </View>
           </ScrollView>
-        </SafeAreaView>
       );
     }
   }

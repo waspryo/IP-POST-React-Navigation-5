@@ -13,9 +13,9 @@ export const styles = StyleSheet.create({
     // marginHorizontal: 20,
     // alignItems: 'center',
     // justifyContent: 'center',
-    borderBottomWidth: 1,
+    // borderBottomWidth: 1,
     backgroundColor: 'white',
-    margin: 20,
+    // margin: 20,
     borderRadius: 20
   },
   projectImage: {

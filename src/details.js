@@ -71,6 +71,22 @@ Detail = () => {
         Platform.select({
           ios:
             <Button
+              title='Project List'
+              onPress={() => navigation.navigate('projects')}
+            />,
+          android:
+            <TouchableOpacity
+              style={{ marginBottom: 16 }}
+              onPress={() => navigation.navigate('projects', { name: "TAB 2" })}
+            >
+              <Text style={{ color: 'blue', fontSize: 20 }}>Project List</Text>
+            </TouchableOpacity>
+        })
+      }
+      {
+        Platform.select({
+          ios:
+            <Button
               title='Pass Data Back'
               onPress={() => navigation.navigate('EMEPOS', { data: "Hello" })}
             />,

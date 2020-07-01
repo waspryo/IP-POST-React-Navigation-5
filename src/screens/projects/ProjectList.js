@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, Dimensions, ActivityIndicator, Image } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Dimensions,
+  ActivityIndicator,
+  Image } from 'react-native';
 import { styles } from '../../styles/style';
 import axios from 'axios';
 
@@ -7,7 +14,7 @@ import axios from 'axios';
 const win = Dimensions.get('window');
 
 
-export default class Tab2 extends React.Component {
+export default class ProjectList extends React.Component {
 
   constructor(props) {
     super(props);
@@ -54,13 +61,14 @@ export default class Tab2 extends React.Component {
                     width: win.width,
                     height: 350
                   }}
-                  source={require('../../../assets/デジモン1.jpg')}/>
+                  source={require('../../../assets/デジモン2.png')}/>
               </View>
               <View style={styles.projectText}>
                 <Text>{this.state.dataSource.project['body']}</Text>
               </View>
               <View style={styles.projectText}>
-                <Text>{this.state.dataSource.project['instagram_micro_press_release']}</Text>
+                <Text>{this.state.dataSource.project['company_name']}株式会社</Text>
+                <Text>{this.state.dataSource.project['updated_at']}まで</Text>
               </View>
             </View>
           </ScrollView>

@@ -15,14 +15,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 15
   },
-  howToUseEmepos: {
-    height: 40,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+  headingText: {
+    fontSize: 17,
+    textAlign: 'center'
+  },
+  textNotice: {
+    fontSize: 14
   },
   howToUseEmeposText: {
     fontSize: 23,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'white'
   }
 })

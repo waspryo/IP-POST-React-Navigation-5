@@ -6,9 +6,12 @@ import {
   ScrollView,
   Dimensions,
   ActivityIndicator,
-  Image } from 'react-native';
-import { styles } from '../../styles/style';
+  Image,
+} from 'react-native';
+import { styles } from '../../styles/fan/projects/project';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/Entypo';
+
 
 
 const win = Dimensions.get('window');
@@ -24,25 +27,38 @@ export default class ProjectList extends React.Component {
     }
   }
 
-  componentDidMount() {
-      axios.get('http://localhost:5555/api/talent/projects/1659')
-      .then((responseJson) => {
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson.data
-        })
-        console.log(this.state.dataSource)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
+  // componentDidMount() {
+  //     axios.get('http://localhost:5555/api/talent/projects/1659')
+  //     .then((responseJson) => {
+  //       this.setState({
+  //         isLoading: false,
+  //         dataSource: responseJson.data
+  //       })
+  //       console.log(this.state.dataSource)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }
 
   render() {
     if (this.state.isLoading) {
       return (
         <View style={styles.container}>
-          <ActivityIndicator />
+          <View style={styles.howToUseEmepos}>
+            <Text style={styles.howToUseEmeposText}>エメポスのトリセツ</Text>
+            <Icon name="open-book" size={20} color="#35C1B1"/>
+          </View>
+          <View
+            style={{
+              margin: 20,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+            <Text>あなたにマッチするプレスリリースを</Text>
+            <Text>届ける準備をしています。</Text>
+          </View>
+          {/* <ActivityIndicator/> */}
         </View>
       )
     } else {

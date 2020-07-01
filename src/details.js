@@ -16,21 +16,6 @@ Detail = () => {
   const route = useRoute()
   const index = useNavigationState(state => state.index)
 
-  console.log(`Screen index: ${index}`)
-
-  useFocusEffect(
-    React.useCallback(() => {
-      fetch('https://restcountries.eu/rest/v2/capital/tallinn')
-      .then(res => {
-        res.json()
-        .then((data) => {
-          // console.log(data)
-        })
-      })
-      return () => console.log("lost focus")
-    })
-  )
-
   return (
     <View style={styles.center}>
       <Text style={styles.title}>{route.params.screenName}</Text>

@@ -18,7 +18,7 @@ Feed = () => {
               title='EMEPOS'
               style={{ color: 'white' }}
               // App.jsのname="Detail"を見て移動できる
-              onPress={() => navigation.navigate('Detail', { screenName: "My Detail Screen" })}
+              onPress={() => navigation.navigate('projects', { screenName: "My Detail Screen" })}
               />
           </View>
         </View>

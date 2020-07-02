@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     borderRadius: 35,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 470,
+    marginVertical: 670,
     shadowOffset: {width: 2, height: 2,},
     shadowColor: 'black',
     shadowOpacity: 0.2,

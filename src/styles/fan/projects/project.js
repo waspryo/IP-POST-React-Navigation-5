@@ -9,11 +9,19 @@ export const styles = StyleSheet.create({
   projectImage: {
     flex: 1,
   },
-  projectText: {
-    flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 15
+  item: {
+    backgroundColor: '#fff',
+  },
+  itemTitle: {
+    marginTop: 10,
+    marginLeft: 15,
+    fontWeight: 'bold',
+    fontSize: 27,
+  },
+  itemText: {
+    marginTop: 18,
+    marginRight: 15,
+    marginLeft: 15
   },
   headingText: {
     fontSize: 17,

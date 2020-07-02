@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+const bgcw = "#fff"
+
 export const styles = StyleSheet.create({
   center: {
     flex: 1,
@@ -10,7 +12,15 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   item: {
-    backgroundColor: '#fff',
+    backgroundColor: bgcw,
+  },
+  detailLayout: {
+    backgroundColor: bgcw
+  },
+  projectText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 15,
   },
   itemTitle: {
     marginTop: 10,
@@ -21,7 +31,9 @@ export const styles = StyleSheet.create({
   itemText: {
     marginTop: 18,
     marginRight: 15,
-    marginLeft: 15
+    marginLeft: 15,
+    fontSize: 13,
+    lineHeight: 23
   },
   headingText: {
     fontSize: 17,

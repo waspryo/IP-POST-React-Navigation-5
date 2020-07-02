@@ -10,14 +10,12 @@ import {
 } from 'react-native';
 import { styles } from '../../styles/fan/projects/project';
 import axios from 'axios';
-
 import WaitingView from './waitingView';
 
 
 const win = Dimensions.get('window');
 
-
-export default class ProjectList extends React.Component {
+class ProjectList extends React.Component {
 
   constructor(props) {
     super(props);
@@ -42,13 +40,18 @@ export default class ProjectList extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props;
     if (this.state.isLoading) {
       return (
         <WaitingView />
       )
     } else {
       let project = this.state.dataSource.map((val, key) => {
-        return <View key={key} style={styles.item}>
+        return <TouchableOpacity
+                  key={key}
+                  style={styles.item}
+                  onPress={() => navigation.navigate('詳細')}
+                >
           <Image
             style={{
               width: win.width,
@@ -60,7 +63,7 @@ export default class ProjectList extends React.Component {
             <Text style={styles.itemTitle}>{val.title}</Text>
             <Text style={styles.itemText}>{val.instagram_micro_press_release}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       })
       return (
         // SafeAreaViewはスマホのトップに文字とか要素が被らないよう幅を取ってくれる
@@ -74,3 +77,4 @@ export default class ProjectList extends React.Component {
     }
   }
 }
+export default ProjectList

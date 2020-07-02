@@ -7,6 +7,7 @@ import Screen2 from './src/screens/drawer/screen2';
 import Screen3 from './src/screens/drawer/screen3';
 // ProjectsList
 import ProjectList from './src/screens/projects/ProjectList';
+import ProjectDetail from './src/screens/projects/ProjectDetail';
 // Tabs
 import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
@@ -15,11 +16,7 @@ import Tab3 from './src/screens/tabs/Tab3';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Appearance, useColorScheme, AppearanceProvider } from 'react-native-appearance';
 // Navigations
-import {
-  NavigationContainer,
-  DefaultTheme,
-  DarkTheme
-} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -59,6 +56,13 @@ App = () => {
       <Stack.Screen
         name="projects"
         component={ProjectList}
+        options={{
+          headerStyle: { backgroundColor: "#3DC0B1" },
+          headerTintColor: "white"
+        }} />
+      <Stack.Screen
+        name="詳細"
+        component={ProjectDetail}
         options={{
           headerStyle: { backgroundColor: "#3DC0B1" },
           headerTintColor: "white"

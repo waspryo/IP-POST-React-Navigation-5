@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Button, ImageBackground } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { styles } from './styles/style';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 Feed = () => {
 
@@ -12,15 +13,18 @@ Feed = () => {
   return (
     <View style={styles.center}>
       <ImageBackground source={require('../assets/dejimon1.jpg')} style={styles.backgroundImage}>
-        <View>
-          <View style={styles.button}>
+        <View style={styles.layout}>
+          <TouchableOpacity
+            style={styles.button}
+            title='EMEPOS'
+            onPress={() => navigation.navigate('projects', { screenName: "My Detail Screen" })}
+          >
             <Button
               title='EMEPOS'
-              style={{ color: 'white' }}
+              style={styles.bntColor}
               // App.jsのname="Detail"を見て移動できる
-              onPress={() => navigation.navigate('projects', { screenName: "My Detail Screen" })}
               />
-          </View>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>

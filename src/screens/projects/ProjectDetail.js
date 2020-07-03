@@ -21,7 +21,8 @@ export default class ProjectDetail extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5555/api/talent/projects/1659')
+    // axios.get('http://localhost:5555/api/talent/projects/1659')
+    axios.get('https://run.mocky.io/v3/112a4667-39f8-44f6-9940-5a6a96239b31')
       .then((responseJson) => {
         this.setState({
           isLoading: false,
@@ -60,7 +61,7 @@ export default class ProjectDetail extends React.Component {
                 </View>
                 <View style={{marginTop: 30 ,marginBottom: 30}}>
                   <View style={styles.projectText}>
-                    <Text style={{fontSize: 27, fontWeight: 'bold'}}>{this.state.dataSource.project['title']}</Text>
+                    <Text style={{fontSize: 27, fontWeight: 'bold'}}>{console.log(this.state.dataSource, 'aaaaaaa')}</Text>
                   </View>
                   <View style={styles.projectText}>
                     <Text style={{fontSize: 13, lineHeight: 23}}>{this.state.dataSource.project['instagram_micro_press_release']}</Text>

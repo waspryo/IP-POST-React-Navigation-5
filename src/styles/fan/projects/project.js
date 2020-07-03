@@ -68,5 +68,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+  },
+  ShareViewStep1: {
+    color: 'white',
+    textAlign: 'center'
   }
 })

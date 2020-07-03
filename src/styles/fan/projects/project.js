@@ -46,5 +46,27 @@ export const styles = StyleSheet.create({
     fontSize: 23,
     fontWeight: 'bold',
     color: 'white'
+  },
+  // ShareView
+  ShareViewContainer: {
+    flex: 1,
+    margin: 10,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  ShareViewContainerOfInner: {
+    backgroundColor: "#3DC0B1",
+    height: 40,
+    justifyContent: 'center',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   }
 })

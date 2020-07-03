@@ -4,7 +4,7 @@ import { styles } from '../../styles/fan/projects/project';
 import { List } from 'react-native-paper';
 import axios from 'axios';
 
-
+import ShareView from '../projects/parts/ShareView';
 import WaitingView from '../../screens/projects/waitingView';
 
 const win = Dimensions.get('window');
@@ -68,6 +68,7 @@ export default class ProjectDetail extends React.Component {
                 </View>
               </View>
             </View>
+            <ShareView/>
             <View style={{marginTop: 50}}>
               <List.AccordionGroup>
                   <List.Accordion

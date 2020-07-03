@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.633 38.094">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #34c1b1;
+        stroke: #34c1b1;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 9px;
+        font-family: Avenir-Heavy, Avenir;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        font-size: 20px;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="step01" transform="translate(-633 -3905.667)">
+    <g id="長方形_1774" data-name="長方形 1774" class="cls-1" transform="translate(633 3905.667)">
+      <rect class="cls-4" width="37.633" height="37.633" rx="6"/>
+      <rect class="cls-5" x="1" y="1" width="35.633" height="35.633" rx="5"/>
+    </g>
+    <text id="STEP_01" data-name="STEP
+01" class="cls-2" transform="translate(651.697 3918.761)"><tspan x="-10.665" y="0">STEP</tspan><tspan class="cls-3"><tspan x="-11.84" y="18">01</tspan></tspan></text>
+  </g>
+</svg>

@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     borderRadius: 35,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowOffset: {width: 2, height: 2,},
+    shadowOffset: { width: 2, height: 2, },
     shadowColor: 'black',
     shadowOpacity: 0.2,
     backgroundColor: '#3DC0B1',

@@ -26,7 +26,8 @@ class ProjectList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5555/api/talent/projects#/')
+    // axios.get('http://localhost:5555/api/talent/projects#/')
+    axios.get('https://run.mocky.io/v3/af13e5ad-8b43-423d-a4df-7d4a859c4c78')
       .then((responseJson) => {
         this.setState({
           isLoading: false,

@@ -5,6 +5,8 @@ import { List } from 'react-native-paper';
 import axios from 'axios';
 
 
+import WaitingView from '../../screens/projects/waitingView';
+
 const win = Dimensions.get('window');
 
 
@@ -35,9 +37,7 @@ export default class ProjectDetail extends React.Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={styles.container}>
-          <ActivityIndicator />
-        </View>
+          <WaitingView />
       )
     } else {
 

@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import { styles } from '../../styles/fan/projects/project';
 import axios from 'axios';
+
 import WaitingView from './waitingView';
+import AccordionGroup from './parts/AccordionGroup';
 
 
 const win = Dimensions.get('window');
@@ -73,6 +75,7 @@ class ProjectList extends React.Component {
           <View style={styles.projectText}>
             <View>{project}</View>
           </View>
+          <AccordionGroup/>
         </ScrollView >
       );
     }

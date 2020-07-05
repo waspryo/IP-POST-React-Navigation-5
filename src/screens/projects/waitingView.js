@@ -9,6 +9,8 @@ import Book from 'react-native-vector-icons/Ionicons';
 // Style
 import { styles } from '../../styles/fan/projects/project';
 
+import HowToUse from './parts/HowToUse';
+
 
 export default function waitingView() {
   return (
@@ -125,25 +127,7 @@ export default function waitingView() {
                 <Insta name="social-instagram" size={45} />
               </View>
             </View>
-            <View style={{ margin: 20 }}>
-              <View
-                style={{
-                  height: 110,
-                  flexDirection: 'row',
-                  backgroundColor: '#35C1B1',
-                  justifyContent: 'space-evenly',
-                  alignItems: 'center',
-                  borderRadius: 20
-                }}
-              >
-                <Book name="ios-book" size={85} style={{ color: 'white' }} />
-                <View style={{ flexDirection: 'column' }}>
-                  <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'white' }}>エメポス</Text>
-                  <Text style={{ fontSize: 24, fontWeight: 'bold', color: 'white', textAlign: 'center' }}>の</Text>
-                  <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'white' }}>トリセツ</Text>
-                </View>
-              </View>
-            </View>
+            <HowToUse/>
             <View style={{ marginBottom: 20 }}>
               <Text style={{ textAlign: 'center' }}>エメポスをうまく使うために、ぜひ読んでね！</Text>
             </View>

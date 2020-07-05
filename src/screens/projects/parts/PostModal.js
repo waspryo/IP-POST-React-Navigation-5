@@ -5,7 +5,6 @@ import Modal from "react-native-modal";
 
 
 export default class PostModal extends React.Component {
-
   state = {
     isModalVisible: false
   }
@@ -15,6 +14,8 @@ export default class PostModal extends React.Component {
   }
 
   render() {
+    const navigation = this.props.passPropsToModal.passPropsToShareView.navigation
+    console.log(navigation, '2222222222')
     return (
       <TouchableOpacity onPress={this.toggleModal}>
         <View style={{
@@ -39,13 +40,17 @@ export default class PostModal extends React.Component {
                 <Cross name="circle-with-cross" size={30} style={{ color: 'black' }} />
               </TouchableOpacity>
               <View style={{ borderRadius: 10, borderColor: 'black', backgroundColor: '#3DC0B1', height: 80, margin: 20 }}>
-                <TouchableOpacity onPress={this.toggleModal} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: 'black', textAlign: 'center' }}>Instagram通常投稿・Twitterで投稿した方</Text>
+                <TouchableOpacity
+                  onPress={() => this.toggleModal(navigation.push('通常投稿レポート'))} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                  <View style={{margin: 20}}>
+                    <Text style={{ color: '#fff', textAlign: 'center' }}>Instagram通常投稿・Twitterで</Text>
+                    <Text style={{ color: '#fff', textAlign: 'center' }}>投稿した方</Text>
+                  </View>
                 </TouchableOpacity>
               </View>
               <View style={{ borderRadius: 10, backgroundColor: '#3DC0B1', height: 80, margin: 20 }}>
-                <TouchableOpacity onPress={this.toggleModal} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: 'black', textAlign: 'center' }}>Instagramのストーリーズで投稿した方</Text>
+                <TouchableOpacity onPress={() => this.toggleModal(navigation.push('ストーリーズ投稿レポート'))} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                  <Text style={{ color: '#fff', textAlign: 'center', padding: 15 }}>Instagramのストーリーズで投稿した方</Text>
                 </TouchableOpacity>
               </View>
             </View>

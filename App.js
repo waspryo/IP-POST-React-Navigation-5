@@ -8,7 +8,8 @@ import Screen3 from './src/screens/drawer/screen3';
 // Projects
 import ProjectList from './src/screens/projects/ProjectList';
 import ProjectDetail from './src/screens/projects/ProjectDetail';
-import Report from './src/screens/projects/Report';
+import NormalReport from './src/screens/projects/NormalReport';
+import StoriesReport from './src/screens/projects/StoriesReport';
 // Tabs
 import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
@@ -29,7 +30,6 @@ const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
 
 App = () => {
-
   const colorScheme = useColorScheme();
 
   const MyTheme = {
@@ -76,8 +76,15 @@ App = () => {
           headerTintColor: "white"
         }} />
       <Stack.Screen
-        name="レポート"
-        component={Report}
+        name="通常投稿レポート"
+        component={NormalReport}
+        options={{
+          headerStyle: { backgroundColor: "#3DC0B1" },
+          headerTintColor: "white"
+        }} />
+      <Stack.Screen
+        name="ストーリーズ投稿レポート"
+        component={StoriesReport}
         options={{
           headerStyle: { backgroundColor: "#3DC0B1" },
           headerTintColor: "white"

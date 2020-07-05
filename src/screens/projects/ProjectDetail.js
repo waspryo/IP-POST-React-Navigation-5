@@ -60,16 +60,14 @@ export default class ProjectDetail extends React.Component {
                     source={require('../../../assets/デジモン2.png')} />
                 </View>
                 <View style={{marginTop: 30 ,marginBottom: 30}}>
-                  <View style={styles.projectText}>
-                    <Text style={{fontSize: 27, fontWeight: 'bold'}}>{console.log(this.state.dataSource, 'aaaaaaa')}</Text>
-                  </View>
+
                   <View style={styles.projectText}>
                     <Text style={{fontSize: 13, lineHeight: 23}}>{this.state.dataSource.project['instagram_micro_press_release']}</Text>
                   </View>
                 </View>
               </View>
             </View>
-            <ShareView/>
+            <ShareView passPropsToShareView={this.props}/>
             <AccordionGroup/>
           </ScrollView>
         </SafeAreaView>

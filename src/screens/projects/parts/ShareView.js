@@ -5,10 +5,11 @@ import { styles } from '../../../styles/fan/projects/project';
 
 import Tabbar from './Tabbar';
 import HowToUse from './HowToUse';
+import PostModal from './PostModal';
 
 const win = Dimensions.get('window');
 
-export default function componentName() {
+export default function ShareView() {
   return (
     <View style={{ margin: 10, flex: 1 }}>
       <View style={styles.ShareViewContainer}>
@@ -30,12 +31,15 @@ export default function componentName() {
               width: 50,
               resizeMode: 'contain',
             }} />
-          <View style={{ flexDirection: 'row', margin: 10, justifyContent: 'space-between', alignItems: 'center' }}>
-            <View style={{ backgroundColor: '#3DC0B1', borderRadius: 4, padding: 3 }}>
+          <View style={{ flexDirection: 'row', margin: 10, alignItems: 'center' }}>
+            <View style={{ backgroundColor: '#3DC0B1', flexDirection: 'column', marginRight: 10, borderRadius: 4, padding: 3 }}>
               <Text style={styles.ShareViewStep1}>STEP</Text>
               <Text style={styles.ShareViewStep1}>01</Text>
             </View>
-            <Text style={{ color: '#3DC0B1', fontWeight: 'bold' }}>投稿するマイクロプレスリリースをコピーしよう！</Text>
+            <View>
+              <Text style={{ color: '#3DC0B1', fontWeight: 'bold' }}>投稿するマイクロプレスリリースを</Text>
+              <Text style={{ color: '#3DC0B1', fontWeight: 'bold' }}>コピーしよう！</Text>
+            </View>
           </View>
           <Text style={{ margin: 10 }}>下記マイクロプレスリリースをコピーして投稿に利用してください。自分のコメントを追記してもOK！</Text>
           <Text style={{ textAlign: 'center', color: '#3DC0B1', marginTop: 8 }}>＞より多くのポイントをゲットするには？</Text>
@@ -75,22 +79,7 @@ export default function componentName() {
             <Text>EMERALD POST に投稿したことを報告しよう！先着で1,000円＋ポイント、全員にポイントがもらえるよ！</Text>
           </View>
           <View style={{ margin: 20, justifyContent: 'center', alignItems: 'center', }}>
-            <View
-              style={{
-                height: 70,
-                width: 250,
-                flexDirection: 'row',
-                backgroundColor: '#35C1B1',
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: 10
-              }}
-            >
-              <Post name="book" size={25} style={{ marginRight: 10, color: 'white' }} />
-              <View >
-                <Text style={{ fontSize: 25, fontWeight: 'bold', color: 'white' }}>投稿を報告</Text>
-              </View>
-            </View>
+            <PostModal />
           </View>
           <View style={{ marginTop: 18, marginLeft: 10, marginRight: 10 }}>
             <Text style={{ fontWeight: 'bold', marginBottom: 10 }}>プレスリリース原文</Text>
@@ -110,7 +99,7 @@ export default function componentName() {
             5,000円分のギフト券をプレゼント！（ECサイトでご利用いただけます）是非ご両親が喜ぶプレゼントをお渡ししてくださいね
             </Text>
           </View>
-          <HowToUse/>
+          <HowToUse />
         </View>
       </View>
     </View>

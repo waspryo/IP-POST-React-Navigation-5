@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
-import { View, Button, ImageBackground, Text } from 'react-native';
+import React from 'react';
+import {
+  View,
+  ImageBackground,
+  Text } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { styles } from './styles/style';
 import { TouchableOpacity } from 'react-native-gesture-handler';

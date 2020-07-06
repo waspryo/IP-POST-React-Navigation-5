@@ -5,36 +5,18 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/Entypo';
 import Apple from 'react-native-vector-icons/Fontisto';
 import Insta from 'react-native-vector-icons/SimpleLineIcons';
-import Book from 'react-native-vector-icons/Ionicons';
 // Style
 import { styles } from '../../styles/fan/projects/project';
 
 import HowToUse from './parts/HowToUse';
+import HowToUseLabel from './parts/HowToUseLabel';
 
 
 export default function waitingView() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={styles.howToUseEmepos}>
-          <LinearGradient
-            colors={['#35C1B1', '#44A5FF']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={{
-              width: '100%',
-              height: 50,
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}>
-            <View style={{ backgroundColor: '#fff', borderRadius: 30, width: 70 }}>
-              <Text style={{ textAlign: 'center', color: '#35C1B1', fontWeight: 'bold' }}>すぐ{`\n`}わかる！</Text>
-            </View>
-            <Text style={styles.howToUseEmeposText}>エメポスのトリセツ</Text>
-            <Icon name="open-book" size={20} color="white" />
-          </LinearGradient>
-        </View>
+        <HowToUseLabel />
         <View>
           <View
             style={{
@@ -127,7 +109,7 @@ export default function waitingView() {
                 <Insta name="social-instagram" size={45} />
               </View>
             </View>
-            <HowToUse/>
+            <HowToUse />
             <View style={{ marginBottom: 20 }}>
               <Text style={{ textAlign: 'center' }}>エメポスをうまく使うために、ぜひ読んでね！</Text>
             </View>

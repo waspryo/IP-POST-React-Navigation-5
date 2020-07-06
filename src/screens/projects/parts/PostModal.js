@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Button, TouchableOpacity } from 'react-native';
 import Cross from 'react-native-vector-icons/Entypo';
 import Modal from "react-native-modal";
+import { styles } from '../../../styles/fan/projects/project';
 
 
 export default class PostModal extends React.Component {
@@ -15,7 +16,6 @@ export default class PostModal extends React.Component {
 
   render() {
     const navigation = this.props.passPropsToModal.passPropsToShareView.navigation
-    console.log(navigation, '2222222222')
     return (
       <TouchableOpacity onPress={this.toggleModal}>
         <View style={{
@@ -43,14 +43,14 @@ export default class PostModal extends React.Component {
                 <TouchableOpacity
                   onPress={() => this.toggleModal(navigation.push('通常投稿レポート'))} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                   <View style={{margin: 20}}>
-                    <Text style={{ color: '#fff', textAlign: 'center' }}>Instagram通常投稿・Twitterで</Text>
-                    <Text style={{ color: '#fff', textAlign: 'center' }}>投稿した方</Text>
+                    <Text style={ styles.ProjectModal }>Instagram通常投稿・Twitterで</Text>
+                    <Text style={ styles.ProjectModal }>投稿した方</Text>
                   </View>
                 </TouchableOpacity>
               </View>
               <View style={{ borderRadius: 10, backgroundColor: '#3DC0B1', height: 80, margin: 20 }}>
                 <TouchableOpacity onPress={() => this.toggleModal(navigation.push('ストーリーズ投稿レポート'))} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                  <Text style={{ color: '#fff', textAlign: 'center', padding: 15 }}>Instagramのストーリーズで投稿した方</Text>
+                  <Text style={{ color: '#fff', textAlign: 'center', padding: 15, fontSize: 18 }}>Instagramのストーリーズで投稿した方</Text>
                 </TouchableOpacity>
               </View>
             </View>

@@ -72,5 +72,46 @@ export const styles = StyleSheet.create({
   ShareViewStep1: {
     color: 'white',
     textAlign: 'center'
-  }
+  },
+  //  Modal
+  ProjectModal: {
+    width: "90%",
+    marginTop: 10,
+    marginLeft: "auto",
+    marginRight: "auto",
+    borderWidth: 1,
+    borderColor: '#3DC0B1',
+    borderRadius: 7
+  },
+  ProjectModalInner: {
+    flexDirection: "row",
+    marginBottom: 20,
+    height: 36,
+    position: "relative"
+  },
+  ProjectModalTab1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#3DC0B1",
+    borderRadius: 4,
+    borderRightWidth: 0,
+    borderTopRightRadius: 0,
+    borderBottomRightRadius: 0
+  },
+  ProjectModalTab2: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#3DC0B1",
+    borderRadius: 4,
+    borderLeftWidth: 0,
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0
+  },
+  ProjectModalImage: {width: 30,height: 30,borderRadius: 15}
+  // Tabbar
+
 })

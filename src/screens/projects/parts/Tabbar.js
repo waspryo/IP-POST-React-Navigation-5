@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions
 } from "react-native";
+import { styles } from "../../../styles/fan/projects/project";
 
 const { width } = Dimensions.get("window");
 
@@ -74,20 +75,10 @@ export default class Tabbar extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <View
-          style={{
-            width: "90%",
-            marginLeft: "auto",
-            marginRight: "auto"
-          }}
+          style={styles.ProjectModal}
         >
           <View
-            style={{
-              flexDirection: "row",
-              marginTop: 40,
-              marginBottom: 20,
-              height: 36,
-              position: "relative"
-            }}
+            style={styles.ProjectModalInner}
           >
             <Animated.View
               style={{
@@ -106,17 +97,7 @@ export default class Tabbar extends React.Component {
               }}
             />
             <TouchableOpacity
-              style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "#3DC0B1",
-                borderRadius: 4,
-                borderRightWidth: 0,
-                borderTopRightRadius: 0,
-                borderBottomRightRadius: 0
-              }}
+              style={styles.ProjectModalTab1}
               onLayout={event =>
                 this.setState({
                   xTabOne: event.nativeEvent.layout.x
@@ -128,26 +109,10 @@ export default class Tabbar extends React.Component {
                 )
               }
             >
-              <Text
-                style={{
-                  color: active === 0 ? "#fff" : "#3DC0B1"
-                }}
-              >
-                Tab One
-                            </Text>
+              <Text style={{color: active === 0 ? "#fff" : "#3DC0B1"}}>Tab One</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: "#3DC0B1",
-                borderRadius: 4,
-                borderLeftWidth: 0,
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0
-              }}
+              style={styles.ProjectModalTab2}
               onLayout={event =>
                 this.setState({
                   xTabTwo: event.nativeEvent.layout.x
@@ -159,13 +124,7 @@ export default class Tabbar extends React.Component {
                 )
               }
             >
-              <Text
-                style={{
-                  color: active === 1 ? "#fff" : "#3DC0B1"
-                }}
-              >
-                Tab Two
-                            </Text>
+              <Text style={{color: active === 1 ? "#fff" : "#3DC0B1"}}>Tab Two</Text>
             </TouchableOpacity>
           </View>
 
@@ -216,11 +175,7 @@ export default class Tabbar extends React.Component {
               <View style={{ marginTop: 20 }}>
                 <Image
                   source={require("../../../../assets/デジモン3.jpg")}
-                  style={{
-                    width: 30,
-                    height: 30,
-                    borderRadius: 15
-                  }}
+                  style={styles.ProjectModalImage}
                 />
               </View>
             </Animated.View>

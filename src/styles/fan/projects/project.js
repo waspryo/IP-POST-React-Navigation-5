@@ -81,7 +81,8 @@ export const styles = StyleSheet.create({
     marginRight: "auto",
     borderWidth: 1,
     borderColor: '#3DC0B1',
-    borderRadius: 7
+    borderRadius: 7,
+    color: '#fff'
   },
   ProjectModalInner: {
     flexDirection: "row",
@@ -111,7 +112,15 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0
   },
-  ProjectModalImage: {width: 30,height: 30,borderRadius: 15}
-  // Tabbar
-
+  ProjectModalImage: {
+    width: 30,
+    height: 30,
+    borderRadius: 15
+  },
+  // StoriesImage
+  StoriesImage: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain',
+  }
 })

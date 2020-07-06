@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Button, ImageBackground } from 'react-native';
+import { View, Button, ImageBackground, Text } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { styles } from './styles/style';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -19,11 +19,11 @@ Feed = () => {
             title='EMEPOS'
             onPress={() => navigation.navigate('projects', { screenName: "My Detail Screen" })}
           >
-            <Button
-              title='EMEPOS'
+            <TouchableOpacity
               style={styles.bntColor}
-              // App.jsのname="Detail"を見て移動できる
-              />
+            // App.jsのname="Detail"を見て移動できる
+            />
+            <Text style={{color: '#fff', fontSize: 26}}>EMEPOS</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

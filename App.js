@@ -46,14 +46,14 @@ App = () => {
 
   createHomeStack = () =>
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="EMEPOS"
         component={Feed}
         options={{
           title: 'EMEPOS',
           headerStyle: { backgroundColor: "#3DC0B1" },
           headerTintColor: "white"
-        }} />
+        }} /> */}
       <Stack.Screen
         name="projects"
         component={ProjectList}

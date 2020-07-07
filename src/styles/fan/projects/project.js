@@ -122,5 +122,30 @@ export const styles = StyleSheet.create({
     width: 300,
     height: 300,
     resizeMode: 'contain',
+  },
+  // Report
+  ReportButton: {
+    backgroundColor: '#3DC0B1',
+    flex: 1,
+    opacity: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    marginTop: 20,
+    marginRight: 80,
+    marginLeft: 80,
+    borderRadius: 10
+  },
+  DisabledReportButton: {
+    backgroundColor: '#3DC0B1',
+    flex: 1,
+    opacity: 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    marginTop: 20,
+    marginRight: 80,
+    marginLeft: 80,
+    borderRadius: 10
   }
 })

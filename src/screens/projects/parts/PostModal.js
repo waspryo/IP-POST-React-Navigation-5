@@ -42,9 +42,9 @@ export default class PostModal extends React.Component {
               <View style={{ borderRadius: 10, borderColor: 'black', backgroundColor: '#3DC0B1', height: 80, margin: 20 }}>
                 <TouchableOpacity
                   onPress={() => this.toggleModal(navigation.push('通常投稿レポート'))} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                  <View style={{margin: 20}}>
-                    <Text style={ styles.ProjectModal }>Instagram通常投稿・Twitterで</Text>
-                    <Text style={ styles.ProjectModal }>投稿した方</Text>
+                  <View style={{ margin: 20 }}>
+                    <Text style={styles.ProjectModal}>Instagram通常投稿・Twitterで</Text>
+                    <Text style={styles.ProjectModal}>投稿した方</Text>
                   </View>
                 </TouchableOpacity>
               </View>

@@ -23,9 +23,12 @@ class ProjectList extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
-      dataSource: []
+      dataSource: [],
+      image: null
     }
   }
+
+
 
   componentDidMount() {
     // axios.get('http://localhost:5555/api/talent/projects#/')
@@ -36,6 +39,17 @@ class ProjectList extends React.Component {
           dataSource: responseJson.data.projects
         })
         // console.log(this.state.dataSource)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    axios.get('https://run.mocky.io/v3/dbcbead1-6bfb-461d-94b2-21fd1d049024')
+      .then((responseJson) => {
+        this.setState({
+          isLoading: false,
+          image: responseJson.data.image
+        })
+        // console.log(this.state.image)
       })
       .catch((err) => {
         console.log(err)
@@ -51,16 +65,17 @@ class ProjectList extends React.Component {
     } else {
       let project = this.state.dataSource.map((val, key) => {
         return <TouchableOpacity
-                  key={key}
-                  style={styles.item}
-                  onPress={() => navigation.navigate('詳細')}
-                >
+          key={key}
+          style={styles.item}
+          onPress={() => navigation.navigate('詳細')}
+        >
           <Image
             style={{
               width: win.width,
               height: 450
             }}
-            source={require('../../../assets/デジモン1.jpg')}
+            style={this.state.image ? styles.ProjectList : styles.DiabledProjectList}
+            source={{ uri: this.state.image ? this.state.image : '../../../assets/dejimon1.jpg' }}
           />
           <View>
             <Text style={styles.itemTitle}>{val.title}</Text>
@@ -75,7 +90,7 @@ class ProjectList extends React.Component {
           <View style={styles.projectText}>
             <View>{project}</View>
           </View>
-          <AccordionGroup/>
+          <AccordionGroup />
         </ScrollView >
       );
     }

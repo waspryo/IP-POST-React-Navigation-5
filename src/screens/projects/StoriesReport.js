@@ -14,8 +14,6 @@ import axios from 'axios';
 
 import HowToUseLabel from '../projects/parts/HowToUseLabel';
 // import UploadImage from './parts/UploadImage';
-
-// import * as ImagePicker from 'expo-image-picker';
 import { styles } from '../../styles/fan/projects/project';
 
 export default class StoriesReport extends React.Component {
@@ -58,7 +56,7 @@ export default class StoriesReport extends React.Component {
       image: this.state.image,
     })
       .then(function (res) {
-          console.log(res);
+        console.log(res);
       })
       .catch(function (error) {
         console.log(error);

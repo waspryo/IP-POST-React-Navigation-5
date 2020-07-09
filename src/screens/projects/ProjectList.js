@@ -5,7 +5,6 @@ import {
   ScrollView,
   Dimensions,
   Image,
-  Button,
   TouchableOpacity
 } from 'react-native';
 import { styles } from '../../styles/fan/projects/project';
@@ -24,40 +23,42 @@ class ProjectList extends React.Component {
     this.state = {
       isLoading: true,
       dataSource: [],
-      image: null
+      image: [],
+      status: null
     }
   }
 
 
-
   componentDidMount() {
     // axios.get('http://localhost:5555/api/talent/projects#/')
-    axios.get('https://run.mocky.io/v3/cc8aa418-c048-4efc-816e-a12b4a3e5bee')
+    axios.get('http://localhost:5556/api/talent/projects')
       .then((responseJson) => {
         this.setState({
           isLoading: false,
           dataSource: responseJson.data.projects
         })
+        // console.log(this.state.image, '11111111')
         // console.log(this.state.dataSource)
       })
       .catch((err) => {
         console.log(err)
       })
-    axios.get('https://run.mocky.io/v3/dbcbead1-6bfb-461d-94b2-21fd1d049024')
-      .then((responseJson) => {
-        this.setState({
-          isLoading: false,
-          image: responseJson.data.image
-        })
-        // console.log(this.state.image)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    // axios.get('https://run.mocky.io/v3/dbcbead1-6bfb-461d-94b2-21fd1d049024')
+    //   .then((responseJson) => {
+    //     this.setState({
+    //       isLoading: false,
+    //       image: responseJson.data.image
+    //     })
+    //     // console.log(this.state.image)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   })
   }
 
   render() {
     const { navigation } = this.props;
+    const { status } = this.state;
     if (this.state.isLoading) {
       return (
         <WaitingView />
@@ -69,15 +70,11 @@ class ProjectList extends React.Component {
           style={styles.item}
           onPress={() => navigation.navigate('詳細')}
         >
-          <Image
-            style={{
-              width: win.width,
-              height: 450
-            }}
-            style={this.state.image ? styles.ProjectList : styles.DiabledProjectList}
-            source={{ uri: this.state.image ? this.state.image : '../../../assets/dejimon1.jpg' }}
-          />
           <View>
+            {val.media_files.map((value, key) => {
+              return <Image style={{ width: win.width, height: 400 }} key={key} source={{ uri: value.signed_url }} />
+            })}
+            <Text style={styles.itemTitle}>{val.id}</Text>
             <Text style={styles.itemTitle}>{val.title}</Text>
             <Text style={styles.itemText}>{val.instagram_micro_press_release}</Text>
           </View>

@@ -1,8 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, TouchableOpacity } from 'react-native';
+import {
+  Text,
+  View,
+  TouchableOpacity
+} from 'react-native';
+import { styles } from '../../../styles/fan/projects/project';
+
+
 import Cross from 'react-native-vector-icons/Entypo';
 import Modal from "react-native-modal";
-import { styles } from '../../../styles/fan/projects/project';
+
+
 
 
 export default class PostModal extends React.Component {
@@ -28,7 +36,8 @@ export default class PostModal extends React.Component {
           borderRadius: 10
         }}>
           <Cross name="arrow-with-circle-right" size={30} style={{ color: '#fff', marginRight: 10 }} />
-          <Text style={{ color: '#fff', fontSize: 18 }}>投稿を報告</Text>
+          <Text
+            style={{ color: '#fff', fontSize: 18 }}>投稿を報告</Text>
           <Modal isVisible={this.state.isModalVisible}>
             <View
               style={{

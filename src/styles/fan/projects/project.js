@@ -56,6 +56,12 @@ export const styles = StyleSheet.create({
     opacity: 0.3,
     height: 450
   },
+  ProjectListVisible: {
+    opacity: 1,
+  },
+  ProjectListInvisible: {
+    opacity: 0.4
+  },
   // ShareView
   ShareViewContainer: {
     flex: 1,

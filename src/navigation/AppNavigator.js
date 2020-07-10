@@ -9,10 +9,8 @@ import ProjectList from '../screens/projects/ProjectList';
 import ProjectDetail from '../screens/projects/ProjectDetail';
 import NormalReport from '../screens/projects/NormalReport';
 import StoriesReport from '../screens/projects/StoriesReport';
-// Tabs
-import Tab1 from '../screens/tabs/Tab1';
-import Tab2 from '../screens/tabs/Tab2';
-import Tab3 from '../screens/tabs/Tab3';
+// Profile
+import Profile from '../screens/fan/Profile';
 // Vector Icon
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // Navigations
@@ -21,30 +19,28 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const MaterialBottomTabs = createMaterialBottomTabNavigator();
 const MaterialTopTabs = createMaterialTopTabNavigator();
-
 export default AppNavigator = () => {
-
   createHomeStack = () =>
     <Stack.Navigator>
       <Stack.Screen
         name="projects"
-        component={ProjectList}
+        children={createBottomTabs}
         options={{
           headerStyle: { backgroundColor: "#3DC0B1" },
           headerTintColor: "white"
         }} />
       <Stack.Screen
-        name="詳細"
+        name="projectDetail"
         component={ProjectDetail}
         options={{
           headerStyle: { backgroundColor: "#3DC0B1" },
           headerTintColor: "white"
-        }} />
+        }}
+      />
       <Stack.Screen
         name="Detail"
         component={Detail}
@@ -74,39 +70,12 @@ export default AppNavigator = () => {
           headerTintColor: "white"
         }}
       />
-      <Stack.Screen
-        name="Top Tabs"
-        children={createTopTabs}
-        options={{
-          headerStyle: { backgroundColor: "#3DC0B1" },
-          headerTintColor: "white"
-        }}
-      />
     </Stack.Navigator>
-
-  createTopTabs = (props) => {
-    return <MaterialTopTabs.Navigator>
-      <MaterialTopTabs.Screen
-        name="Tab 1"
-        component={Tab1}
-      />
-      <MaterialTopTabs.Screen
-        name="Tab 2"
-        component={Tab2}
-        options={{ title: props.route.params.name }}
-      />
-      <MaterialTopTabs.Screen
-        name="Tab 3"
-        component={Tab3}
-      />
-    </MaterialTopTabs.Navigator>
-  }
-
   createBottomTabs = () => {
     return <MaterialBottomTabs.Navigator>
       <MaterialBottomTabs.Screen
-        name="Tab 1"
-        component={Tab1}
+        name="rojectList"
+        component={ProjectList}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: () => (
@@ -115,28 +84,17 @@ export default AppNavigator = () => {
         }}
       />
       <MaterialBottomTabs.Screen
-        name="Tab 2"
-        component={Tab2}
+        name="Profile"
+        component={Profile}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: () => (
-            <Icon style={[{ color: 'white' }]} size={25} name={'human'} />
-          )
-        }}
-      />
-      <MaterialBottomTabs.Screen
-        name="Tab 3"
-        component={Tab3}
-        options={{
-          tabBarLabel: 'Map',
-          tabBarIcon: () => (
-            <Icon style={[{ color: 'white' }]} size={25} name={'map'} />
+            <Icon style={[{ color: 'white' }]} size={25} name={'home'} />
           ),
         }}
       />
     </MaterialBottomTabs.Navigator>
   }
-
   return (
     <NavigationContainer>
       <Drawer.Navigator>
@@ -147,5 +105,4 @@ export default AppNavigator = () => {
       </Drawer.Navigator>
     </NavigationContainer>
   );
-
 }

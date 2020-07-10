@@ -38,14 +38,12 @@ export default class ProjectDetail extends React.Component {
   render() {
     if (this.state.isLoading) {
       return (
-          <WaitingView />
+        <WaitingView />
       )
     } else {
 
       return (
-        // SafeAreaViewはスマホのトップに文字とか要素が被らないよう幅を取ってくれる
         <SafeAreaView>
-          {/* ScrollViewは表示するものが多くはみ出る場合にスクロールできる */}
           <ScrollView>
             <View style={styles.center}>
               <View style={styles.detailLayout}>
@@ -59,16 +57,16 @@ export default class ProjectDetail extends React.Component {
                     }}
                     source={require('../../../assets/デジモン2.png')} />
                 </View>
-                <View style={{marginTop: 30 ,marginBottom: 30}}>
+                <View style={{ marginTop: 30, marginBottom: 30 }}>
 
                   <View style={styles.projectText}>
-                    <Text style={{fontSize: 13, lineHeight: 23}}>{this.state.dataSource.project['instagram_micro_press_release']}</Text>
+                    <Text style={{ fontSize: 13, lineHeight: 23 }}>{this.state.dataSource.project['instagram_micro_press_release']}</Text>
                   </View>
                 </View>
               </View>
             </View>
-            <ShareView passPropsToShareView={this.props}/>
-            <AccordionGroup/>
+            <ShareView passPropsToShareView={this.props} />
+            <AccordionGroup />
           </ScrollView>
         </SafeAreaView>
       );

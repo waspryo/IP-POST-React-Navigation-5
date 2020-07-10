@@ -24,10 +24,8 @@ class ProjectList extends React.Component {
       isLoading: true,
       dataSource: [],
       image: [],
-      status: null
     }
   }
-
 
   componentDidMount() {
     // axios.get('http://localhost:5555/api/talent/projects#/')
@@ -38,7 +36,7 @@ class ProjectList extends React.Component {
           dataSource: responseJson.data.projects
         })
         // console.log(this.state.image, '11111111')
-        // console.log(this.state.dataSource)
+        console.log(this.state.dataSource)
       })
       .catch((err) => {
         console.log(err)
@@ -58,7 +56,6 @@ class ProjectList extends React.Component {
 
   render() {
     const { navigation } = this.props;
-    const { status } = this.state;
     if (this.state.isLoading) {
       return (
         <WaitingView />
@@ -68,7 +65,7 @@ class ProjectList extends React.Component {
         return <TouchableOpacity
           key={key}
           style={styles.item}
-          onPress={() => navigation.navigate('詳細')}
+          onPress={() => navigation.navigate('projectDetail', { name: "Detail" })}
         >
           <View>
             {val.media_files.map((value, key) => {

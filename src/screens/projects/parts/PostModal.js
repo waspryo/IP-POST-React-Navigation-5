@@ -14,14 +14,16 @@ import Modal from "react-native-modal";
 
 
 export default class PostModal extends React.Component {
-  state = {
-    isModalVisible: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalVisible: false
+    }
   }
 
   toggleModal = () => {
     this.setState({ isModalVisible: !this.state.isModalVisible });
   }
-
   render() {
     const navigation = this.props.passPropsToModal.passPropsToShareView.navigation
     return (

@@ -1,14 +1,13 @@
 import React from 'react';
-import Detail from '../screens/projects/ProjectDetail';
 // Screen
 import Screen1 from '../screens/drawer/screen1';
 import Screen2 from '../screens/drawer/screen2';
 import Screen3 from '../screens/drawer/screen3';
 // Projects
-import ProjectList from '../screens/projects/ProjectList';
-import ProjectDetail from '../screens/projects/ProjectDetail';
-import NormalReport from '../screens/projects/NormalReport';
-import StoriesReport from '../screens/projects/StoriesReport';
+import ProjectList from '../components/projects/ProjectList';
+import ProjectDetail from '../components/projects/ProjectDetail';
+import NormalReport from '../components/projects/NormalReport';
+import StoriesReport from '../components/projects/StoriesReport';
 // Profile
 import Profile from '../screens/fan/Profile';
 // Vector Icon
@@ -41,13 +40,6 @@ export default AppNavigator = () => {
           headerTintColor: "white"
         }}
       />
-      <Stack.Screen
-        name="Detail"
-        component={Detail}
-        options={{
-          headerStyle: { backgroundColor: "#3DC0B1" },
-          headerTintColor: "white"
-        }} />
       <Stack.Screen
         name="通常投稿レポート"
         component={NormalReport}

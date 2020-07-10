@@ -4,7 +4,7 @@ import { styles } from '../../styles/fan/projects/project';
 import axios from 'axios';
 
 import ShareView from '../projects/parts/ShareView';
-import WaitingView from '../../screens/projects/waitingView';
+import WaitingView from '../projects/waitingView';
 import AccordionGroup from './parts/AccordionGroup';
 
 const win = Dimensions.get('window');
